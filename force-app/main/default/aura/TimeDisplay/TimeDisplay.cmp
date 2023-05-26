@@ -1,0 +1,13 @@
+<aura:component implements="flexipage:availableForAllPageTypes" controller="TimeDisplayController">
+    <aura:attribute name="timeData" type="Object[]" />
+    
+    <aura:handler name="init" value="{!this}" action="{!c.init}" />
+    
+    <lightning:card title="World Time">
+        <ul>
+            <aura:iteration items="{!v.timeData}" var="city">
+                <li>{!city.name}: {!city.time}</li>
+            </aura:iteration>
+        </ul>
+    </lightning:card>
+</aura:component>
